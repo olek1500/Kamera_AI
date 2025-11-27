@@ -1,0 +1,21 @@
+# SCRFD Drone Detector
+```bash
+# Aktywuj sterownik ROSA
+source /opt/ros/jazzy/setup.bash
+ros2 launch depthai_ros_driver camera.launch.py
+# Detektor SCRFD
+cd ~/drone_ws
+# 2. Załaduj środowisko
+source install/setup.bashource /opt/ros/jazzy/setup.bash
+
+# 2. Nasłuchuj tematu
+ros2 topic echo /drone/face_detections
+
+
+source venv/bin/activate
+# 3. START
+ros2 run scrfd_drone_detector detect
+
+# Dane z rosa
+source /opt/ros/jazzy/setup.bash
+ros2 topic echo /drone/face_detections
